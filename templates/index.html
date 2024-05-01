@@ -11,7 +11,7 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css.css">
     <title>{% block title %} {% endblock %}</title>
-</head> 
+</head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -43,7 +43,7 @@
             <div class="wrapper">
                 {% for complex in complexes %}
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{ complex['image'] }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="{{ url_for('complex', complex_id=complex['id']) }}">
                                 <h5 class="card-title">{{ complex['title'] }}</h5>
