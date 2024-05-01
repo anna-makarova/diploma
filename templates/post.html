@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ complex['title'] }} {% endblock %}</h2>
+    <p>{{ complex['address'] }}</p>
+    <p>{{ complex['total_floor'] }}</p>
+    <p>{{ complex['name'] }}</p>
+    <p> Район: {{ complex['district'] }}</p>
+    <p> Качество строительства: {{ complex['construction'] }}</p>
+    <p> Управление: {{ complex['administration'] }}</p>
+    <p> Детская площадка: {{ complex['playground'] }}</p>
+    <p> Транспортная доступность: {{ complex['transport'] }}</p>
+    <p> Наличие магазинов: {{ complex['shop'] }}</p>
+    <p> Наличие школ: {{ complex['school'] }}</p>
+    <p> Наличие парков: {{ complex['park'] }}</p>
+    <span class="badge text-bg-primary">{{ complex['price'] }}</span>
+{% endblock %}
