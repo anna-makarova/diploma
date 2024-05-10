@@ -9,9 +9,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="ssha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css">
-    <link rel="stylesheet" href="/static/bars-movie.css">
     <link rel="stylesheet" href="/static/css.css">
     <title>{% block title %} {% endblock %}</title>
 </head>
@@ -49,7 +46,8 @@
                 </a>
             </div>
 
-            <p> Район: {{ complex['district'] }}</p>
+            <p> Район:
+            <img src="{{ complex['district']}}" class="card-img" width="25px" alt="...">
             <p> Качество строительства: {{ complex['construction'] }}</p>
             <p> Управление: {{ complex['administration'] }}</p>
             <p> Детская площадка: {{ complex['playground'] }}</p>
