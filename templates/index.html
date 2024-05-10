@@ -13,30 +13,27 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <div class="main-block">
+<div class="container-fluid">
+    <div class="main-block">
+        <nav class="navbar navbar-expand-lg bg-light">
             <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+        </nav>
     </div>
-</nav>
-<div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="wrapper">
-                    <a class="btn btn-primary house" href="{{ url_for('complex_search') }}" role="button">Проверить ЖК</a>
-                    <a class="btn btn-primary company" href="{{ url_for('company_search') }}" role="button">Проверить застройщика</a>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-wrapper">
+                <p class="callText">Найди свою</p>
+                <div class="button-wrapper">
+                    <a class="complexButton" href="{{ url_for('complex_search') }}" role="button">Проверить ЖК</a>
+                    <a class="companyButton" href="{{ url_for('index') }}" role="button">Проверить
+                        застройщика</a>
                 </div>
             </div>
         </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <img src="/static/image/main.png" class="" alt="...">
+            {#            <img src="/static/image/hero.jpg" class="" alt="...">#}
         </div>
     </div>
     <div class="row">
@@ -65,7 +62,7 @@
 {#                success: function (res) {#}
 {#                    var data = "<ul>";#}
 {#                    $.each(JSON.parse(res), function (index, value) {#}
-{#                        data += "<li>" + value.complex + "</li>";#}
+{#                        data += "<li>" + value.posts + "</li>";#}
 {#                        console.log(res);#}
 {#                    });#}
 {#                    data += "</ul>";#}

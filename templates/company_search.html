@@ -13,30 +13,20 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <div class="main-block">
+<div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg bg-light">
             <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-</nav>
-<div class="container">
+        </nav>
+
     <div class="row">
         <div class="col-md-12">
-            <div class="wrapper">
+            <div class="card-wrapper">
                 {% for company in companies %}
                     <div class="card">
-{#                        <div class="fixblock">#}
-{#                            <img src="{{ complex['image'] }}" class="card-img-top" alt="...">#}
-{#                        </div>#}
-                        <div class="card-body">
+                        <div class="company-fixblock">
                             <a href="{{ url_for('company', company_id=company['company_id']) }}">
-                                <h2>{{ company['name'] }}</h2>
+                                <img src="{{ company['logo'] }}" class="card-img-top" alt="...">
                             </a>
                         </div>
                     </div>

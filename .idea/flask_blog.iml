@@ -5,12 +5,16 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/posts/templates" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/env" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="jquery-ui" level="application" />
+    <orderEntry type="library" name="jquery-3.7.1" level="application" />
+    <orderEntry type="library" name="font-awesome" level="application" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
@@ -21,6 +25,11 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/posts/templates" />
+        <option value="$MODULE_DIR$/posts/templates/posts" />
+        <option value="$MODULE_DIR$/company/templates" />
+        <option value="$MODULE_DIR$/company_search/templates" />
+        <option value="$MODULE_DIR$/complex_search/templates" />
       </list>
     </option>
   </component>

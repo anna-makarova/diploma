@@ -40,6 +40,15 @@ def get_company(company_id):
     return company
 
 
+def getusers(search):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM complex WHERE title LIKE ?", ("%"+search+"%",))
+    results = cursor.fetchall()
+    conn.close()
+    return results
+
+
 app = Flask(__name__)
 
 
@@ -49,11 +58,15 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/complex_search')
+@app.route('/complex_search', methods=["GET", "POST"])
 def complex_search():
-    conn = get_db_connection()
-    complex = conn.execute('SELECT * FROM complex').fetchall()
-    conn.close()
+    if request.method == "POST":
+        data = dict(request.form)
+        complex = getusers(data["search"])
+    else:
+        conn = get_db_connection()
+        complex = conn.execute('SELECT * FROM complex').fetchall()
+        conn.close()
     return render_template('complex_search.html', complexes=complex)
 
 
