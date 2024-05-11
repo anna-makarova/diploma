@@ -49,6 +49,15 @@ def getusers(search):
     return results
 
 
+def getcompany(search):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM company WHERE name LIKE ?", ("%"+search+"%",))
+    results = cursor.fetchall()
+    conn.close()
+    return results
+
+
 app = Flask(__name__)
 
 
@@ -70,23 +79,16 @@ def complex_search():
     return render_template('complex_search.html', complexes=complex)
 
 
-@app.route('/company_search')
+@app.route('/company_search', methods=["GET", "POST"])
 def company_search():
-    conn = get_db_connection()
-    company = conn.execute('SELECT * FROM company').fetchall()
-    conn.close()
+    if request.method == "POST":
+        data = dict(request.form)
+        company = getcompany(data["search"])
+    else:
+        conn = get_db_connection()
+        company = conn.execute('SELECT * FROM company').fetchall()
+        conn.close()
     return render_template('company_search.html', companies=company)
-
-
-# @app.route("/livesearch", methods=["POST", "GET"])
-# def livesearch():
-#     searchbox = request.form.get("text")
-#     conn = get_db_connection()
-#     query = "SELECT title FROM complex where title LIKE '{}%' order by title".format(searchbox)
-#     results = conn.execute(query).fetchall()
-#     results = [tuple(row) for row in results]
-#     json_string = json.dumps(results)
-#     return jsonify(json_string)
 
 
 @app.route('/complex/<int:complex_id>')

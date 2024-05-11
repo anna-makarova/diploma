@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        
+
             <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -32,35 +32,39 @@
         </div>
     </div>
     <div class="header-info-block">
-        <div class="titleSell">
-            <p> {{ complex['title'] }}</p>
-        </div>
+        <h3> {{ complex['title'] }}</h3><br>
+
     </div>
     <div class="general-description">
         <div class="description">
             <div class="apartment-description">
+                <p> Цена за метр квадратный: {{ complex['price'] }} рублей</p>
                 <p> Адрес: {{ complex['address'] }}</p>
                 <p> Количество этажей: {{ complex['total_floor'] }}</p>
                 <a href="{{ url_for('company', company_id=complex['company_id']) }}">
-                    <p>{{ complex['name'] }}</p>
+                    <p>Застройщик: {{ complex['name'] }}</p>
                 </a>
             </div>
 
-            <p> Район:
-            <img src="{{ complex['district']}}" class="card-img" width="25px" alt="...">
-            <p> Качество строительства: {{ complex['construction'] }}</p>
-            <p> Управление: {{ complex['administration'] }}</p>
-            <p> Детская площадка: {{ complex['playground'] }}</p>
-            <p> Транспортная доступность: {{ complex['transport'] }}</p>
-            <p> Наличие магазинов: {{ complex['shop'] }}</p>
-            <p> Наличие школ: {{ complex['school'] }}</p>
-            <p> Наличие парков: {{ complex['park'] }}</p>
+            <p> Район</p>
+            <img src="{{ complex['district']}}" class="rating-img" alt="...">
+            <p> Качество строительства</p>
+            <img src="{{ complex['construction']}}" class="rating-img" alt="...">
+            <p> Управление</p>
+            <img src="{{ complex['administration']}}" class="rating-img" alt="...">
+            <p> Детская площадка</p>
+            <img src="{{ complex['playground']}}" class="rating-img" alt="...">
+            <p> Транспортная доступность</p>
+            <img src="{{ complex['transport']}}" class="rating-img" alt="...">
+            <p> Наличие магазинов</p>
+            <img src="{{ complex['shop']}}" class="rating-img" alt="...">
+            <p> Наличие школ</p>
+            <img src="{{ complex['school']}}" class="rating-img" alt="...">
+            <p> Наличие парков</p>
+            <img src="{{ complex['park']}}" class="rating-img" alt="...">
         </div>
 
     </div>
-
-
-    <span class="badge text-bg-primary">{{ complex['price'] }}</span>
 </div>
 
 <!-- Optional JavaScript -->

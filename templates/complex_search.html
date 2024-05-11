@@ -22,12 +22,10 @@
         <div class="col-md-12">
             <form method="post">
             <input type="text" name="search" id="tags1" required>
-            <input type="submit" value="Search">
+            <input type="submit" value="Найти">
         </form>
         </div>
     </div>
-
-
     <!-- (B) OUTPUT SEARCH RESULTS -->
     {% if usr | length != 0 %}
         <table id="demo">
@@ -49,7 +47,9 @@
                 {% for complex in complexes %}
                     <div class="card">
                         <div class="complex-fixblock">
-                            <img src="{{ complex.image }}" class="card-img-top" alt="...">
+                             <a href="{{ url_for('complex', complex_id=complex['id']) }}">
+                                <img src="{{ complex.image }}" class="card-img-top" alt="...">
+                            </a>
                         </div>
                         <div class="card-body">
                             <a href="{{ url_for('complex', complex_id=complex['id']) }}">

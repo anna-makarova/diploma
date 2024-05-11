@@ -18,7 +18,7 @@
     flex-direction: column;
     background: white;
     position: relative;
-    /* top: 390px; */
+    top: -10px;
     border-radius: 4px !important;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15) !important;
     border-color: whitesmoke !important;
@@ -52,17 +52,10 @@
     color: dimgrey;
 }
 /*Поиск*/
-.ui-menu .ui-widget .ui-widget-content .ui-autocomplete .ui-front{
-    position: relative;
-    top: -351.5px;
-    left: 12px;
-    width: 300px;
-    /* display: none; */
-    list-style-type: none;
-    background-color: white;
-    border-radius: 4px !important;
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15) !important;
-    border-color: whitesmoke !important;
+form{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100%;
 }
 
 /*Карточки комплексов*/
@@ -74,12 +67,19 @@
 }
 
 .card {
-    background-color: white !important;
-    /*border-radius: 4px !important;*/
-    /*box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1) !important;*/
-    border-color: white !important;
+     border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
     margin: 20px;
+    max-width: min-content;
 }
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
 .card-body {
     display: flex;
     flex-direction: column;
@@ -92,13 +92,30 @@
 }
 .card-title {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 24px;
+    overflow-wrap: break-word;
+}
+.card-title:focus{
+     color: #B9BA8E;
 }
 .complex-fixblock{
     width: 350px;
     height: 220px;
     max-height: 350px;
+}
+@media(max-width: 825px) {
+    .complex-fixblock {
+        width: 250px;
+    }
+    .card-title {
+        font-size: 18px!important;
+        font-weight: 400!important;
+    }
+    .address {
+        font-size: 16px!important;
+        font-weight: 300!important;
+    }
 }
 
 
@@ -164,3 +181,11 @@ a {
     display: flex;
     flex-direction: column;
 }
+
+/*Страница с рейтингом*/
+.rating-img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+
