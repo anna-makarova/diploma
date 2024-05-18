@@ -105,20 +105,35 @@
     flex-direction: column;
 }
 .comment-complex {
-    max-width: 500px;
+    max-width: 650px;
     align-content: flex-start;
     margin-left: 90px;
     min-width: 300px;
+    position: relative;
 }
 .comment-company {
-    max-width: 500px;
+    max-width: 650px;
     align-self: self-end;
     min-width: 300px;
     margin-left: 30px;
     margin-right: 90px;
+    position: relative;
 }
 .comment {
-    line-height: 30px;
+    line-height: 40px;
+    font-size: 20px;
+}
+.quote-img{
+    position: absolute;
+    top: -15px;
+    left: -40px;
+    width: 25px;
+}
+.double-quote-img {
+    position: absolute;
+    right: -30px;
+    bottom: 30px;
+    width: 25px;
 }
 @media(max-width: 560px) {
    .comment-complex {
