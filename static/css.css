@@ -9,6 +9,14 @@
     height: 500px;
 }
 
+.navbar {
+    margin: 30px;
+    background-color: white !important;
+}
+.navbar-brand {
+    /*padding-left: 20px;*/
+}
+
 /*Кнопки выбора*/
 
 
@@ -18,7 +26,7 @@
     flex-direction: column;
     background: white;
     position: relative;
-    top: -10px;
+    top: -60px;
     border-radius: 4px !important;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.15) !important;
     border-color: whitesmoke !important;
@@ -51,9 +59,89 @@
     font-weight: 300;
     color: dimgrey;
 }
+@media(max-width: 560px) {
+    .button-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+}
+
+/*Описание на главной*/
+
+.points-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.element-wrapper {
+    display: flex;
+    height: min-content;
+    width: 350px;
+    margin-top: 10px;
+}
+.img {
+   height: 80px;
+    min-width: 50px;
+}
+.description {
+    height: min-content;
+    align-self: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding-left: 10px;
+}
+.img-fluid {
+    width: 75px;
+    object-fit: contain;
+}
+.comments-wrapper {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.comment-complex {
+    max-width: 500px;
+    align-content: flex-start;
+    margin-left: 90px;
+    min-width: 300px;
+}
+.comment-company {
+    max-width: 500px;
+    align-self: self-end;
+    min-width: 300px;
+    margin-left: 30px;
+    margin-right: 90px;
+}
+.comment {
+    line-height: 30px;
+}
+@media(max-width: 560px) {
+   .comment-complex {
+    max-width: 500px;
+    align-content: flex-start;
+    min-width: 300px;
+    margin-left: 30px;
+    margin-top: 10px;
+       margin-right: 10px;
+}
+.comment-company {
+    max-width: 500px;
+    align-self: self-end;
+    min-width: 300px;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+}
+
 /*Поиск*/
 form{
-    margin-top: 20px;
+
     margin-left: 20px;
     width: 100%;
 }
@@ -117,6 +205,23 @@ form{
         font-weight: 300!important;
     }
 }
+@media(max-width: 560px) {
+    .complex-fixblock {
+        width: 300px;
+    }
+    .card-title {
+        font-size: 18px!important;
+        font-weight: 400!important;
+    }
+    .address {
+        font-size: 16px!important;
+        font-weight: 300!important;
+    }
+    .form {
+        margin-left: 20px;
+        width: 100%;
+    }
+}
 
 
 
@@ -145,8 +250,8 @@ form{
     line-height: 24px;
 }
 .company-fixblock{
-    width: 230px;
-    height: 230px;
+    width: 200px;
+    height: 200px;
 }
 
 a {

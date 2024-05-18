@@ -15,14 +15,14 @@
 <body>
 <div class="container-fluid">
     <div class="main-block">
-        <nav class="navbar navbar-expand-lg bg-light">
-            <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
+        <nav class="navbar navbar-expand-lg bg-light" style="margin: 30px 0px; background-color: rgba(0, 0, 0, 0.2)!important;" >
+            <a class="navbar-brand" href="{{ url_for('index') }}" style="color: white !important; padding: 20px;" >HOME</a>
         </nav>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="main-wrapper">
-                <p class="callText">Проверь</p>
+                <p class="callText">Будь уверен в своем выборе</p>
                 <div class="button-wrapper">
                     <a class="complexButton" href="{{ url_for('complex_search') }}" role="button">Проверить ЖК</a>
                     <a class="companyButton" href="{{ url_for('company_search') }}" role="button">Проверить
@@ -33,41 +33,53 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+            <div class="points-wrapper">
+                <div class="element-wrapper">
+                    <div class="img">
+                        <img src="/static/image/hourglas1.png" class="img-fluid rounded-start" style="width: 75px;
+    object-fit: contain;" alt="...">
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Экономим время</h5>
-{#                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to#}
-{#                                additional content. This content is a little bit longer.</p>#}
-{#                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>#}
+                <div class="description">
+                            <p class="card-text">Сокращаем время на изучение</p>
                         </div>
-                    </div>
                 </div>
-            </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+            <div class="element-wrapper">
+                    <div class="img">
+                        <img src="/static/image/search2.png" class="img-fluid rounded-start" style="width: 75px;
+    object-fit: contain;" alt="...">
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Выделяем главное</h5>
-{#                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to#}
-{#                                additional content. This content is a little bit longer.</p>#}
-{#                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>#}
+                <div class="description">
+                            <p class="card-text">Выделяем главное</p>
                         </div>
+                </div>
+             <div class="element-wrapper">
+                    <div class="img">
+                        <img src="/static/image/rating1.png" class="img-fluid rounded-start" style="width: 75px;
+    object-fit: contain;" alt="...">
                     </div>
+                <div class="description">
+                            <p class="card-text">Работаем с реальными отзывами</p>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            {#            <img src="/static/image/hero.jpg" class="" alt="...">#}
+            <div class="comments-wrapper">
+                <div class="comment-complex">
+                    <p class="comment">По дому <mark>пошли трещины. Углы промерзают.</mark> Во дворе <mark>позорная детская площадка!</mark> Огромная <mark>проблема с парковками.</mark> Один только плюс - <mark>новая школа рядом, детские сады новые.</mark></p>
+                    <p><small>ЖК Меридиан</small></p>
+                </div>
+                <div class="comment-company">
+                    <p class="comment">Купил квартиру, <mark>дом сдали во время</mark> как и обещали, менеджеры передали ключи, в целом все хорошо. При передаче квартиры <mark>замечания по ремонту были устранены.</mark></p>
+                    <p><small>Застройщик Астра</small></p>
+                </div>
+                <div class="comment-complex">
+                    <p class="comment">Много плюсов в районе, но минусы тоже имеются. Из плюсов: это <mark>множество камер,</mark> отсутствие заборов, <mark>множество детских садов, школ,</mark> есть <mark>два парка.</mark> Из минусов это <mark>качество жилья, особенно шумоизоляция в квартире.</mark></p>
+                    <p><small>ЖК Eleven</small></p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
