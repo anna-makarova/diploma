@@ -14,41 +14,61 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-
-            <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
     </div>
 </nav>
 <div class="container">
     <div class="mainWrapper">
-        <div class="imgWrapper">
+        <div class="companyWrapper">
             <img src="{{ company['logo'] }}" class="card-img" alt="...">
         </div>
     </div>
     <div class="header-info-block">
-
-            <h3> {{ company['name'] }}</h3><br>
-
+        <h3> {{ company['name'] }}</h3><br>
     </div>
     <div class="general-description">
         <div class="description">
-            <p> Cоблюдение сроков строительства</p>
-            <img src="{{ company['deadlines']}}" class="rating-img" alt="...">
-            <p> Устранение замечаний на приемке</p>
-            <img src="{{ company['fixing']}}" class="rating-img" alt="...">
-            <p> Качество строительства и ремонта</p>
-            <img src="{{ company['construction']}}" class="rating-img" alt="...">
-            <p> Уровень коммуникации</p>
-            <img src="{{ company['communication']}}" class="rating-img" alt="...">
-            <p> Работа гарантийного отдела</p>
-            <img src="{{ company['guarantee']}}" class="rating-img" alt="...">
+            <div class="left-wrapper">
+                <div class="category"> Cоблюдение сроков строительства</div>
+                <div class="memo"><small>Уложился ли застройщик в сроки сдачи дома</small></div>
+                <div class="rating-wrapper">
+                   <img src="{{ company['deadlines'] }}" class="rating-img" alt="...">
+                    <div class="count">({{ company['deadlines_count'] }})</div>
+                </div>
+                <div class="category"> Устранение замечаний на приемке</div>
+                <div class="memo"><small>Насколько комфортно и конструктивно проходила приемка квартиры. Исправил ли застройщик дефекты</small></div>
+                <div class="rating-wrapper">
+                    <img src="{{ company['fixing'] }}" class="rating-img" alt="...">
+                    <div class="count">({{ company['fixing_count'] }})</div>
+                </div>
+                <div class="category"> Качество строительства и ремонта</div>
+                <div class="memo"><small>Качество постройки, были ли дефекты в процессе эксплуатации. Насколько хорошо выполнена чистовая отделка</small></div>
+                <div class="rating-wrapper">
+                    <img src="{{ company['construction'] }}" class="rating-img" alt="...">
+                    <div class="count">({{ company['construction_count'] }})</div>
+                </div>
+                <div class="category"> Уровень коммуникации</div>
+                <div class="memo"><small>Комфортность общения с представителями застройщика, компетентность и вовлеченность сотрудников</small></div>
+                <div class="rating-wrapper">
+                    <img src="{{ company['communication'] }}" class="rating-img" alt="...">
+                    <div class="count">({{ company['communication_count'] }})</div>
+                </div>
+                <div class="category"> Работа гарантийного отдела</div>
+                <div class="memo"><small>Участие застройщика в гарантийном обслуживании. Качество исправления дефектов, уровень коммуникации</small></div>
+                <div class="rating-wrapper">
+                   <img src="{{ company['guarantee'] }}" class="rating-img" alt="...">
+                    <div class="count">({{ company['guarantee_count'] }})</div>
+                </div>
+            </div>
         </div>
     </div>
+{#    <h3> {{ company['title'] }}</h3><br>#}
 </div>
 
 <!-- Optional JavaScript -->

@@ -1,5 +1,6 @@
 .body {
     overflow-x: hidden;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 .main-block {
@@ -64,6 +65,19 @@
     display: flex;
     flex-direction: column;
 }
+    .callText{
+        font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 300;
+    color: dimgrey;
+    }
+    .complexButton{
+        margin: 10px 20px 0px 20px !important;
+    }
+    .main-wrapper {
+        max-width: 285px;
+    }
 }
 
 /*Описание на главной*/
@@ -152,11 +166,17 @@
     margin-top: 10px;
     margin-right: 10px;
 }
+.comment {
+    line-height: 28px;
+    font-size: 15px;
+}
+.points-wrapper {
+    display: none;
+}
 }
 
 /*Поиск*/
 form{
-
     margin-left: 20px;
     width: 100%;
 }
@@ -284,28 +304,99 @@ a {
     justify-content: flex-start;
     margin-top: 20px;
 }
-.imgWrapper {
-    width: 60vh;
-    margin-right: 40px;
+.companyWrapper {
     margin-bottom: 30px;
-}
-.general-description {
-    width: 50vw;
-    margin-right: 20px;
-    min-width: 300px;
-}
-.description {
-    font-size: 18px;
-}
-.apartment-description {
-    display: flex;
-    flex-direction: column;
+    max-width: 300px;
 }
 
 /*Страница с рейтингом*/
 .rating-img {
-    width: 150px;
-    margin-bottom: 10px;
+    width: 135px;
+}
+.header {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Roboto Condensed", sans-serif;
+    color: rgb(7, 40, 51);
+}
+.address{
+    color: rgb(104, 106, 122);
+    font-size: 16px;
+}
+.card-img {
+    border: 2px solid #fff !important;
+    border-radius: 13px;
+    object-fit: cover;
+}
+.line {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.postWrapper {
+    max-width: 800px;
+}
+.general-description {
+    margin-right: 20px;
+    margin-top: 30px;
+    font-family: "dinpro", sans-serif;
+}
+.ratingDescription {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.left-wrapper{
+    flex-basis: 500px;
+}
+.right-wrapper{
+    flex-basis: 500px;
+}
+.apartment-description {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    color: rgb(104, 106, 122);
+    font-family: "dinpro", sans-serif;
+    margin-left: 30px;
+}
+.memo {
+    color: rgb(104, 106, 122);
+    font-family: "dinpro", sans-serif;
+}
+.rating-wrapper{
+    display: flex;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    color: rgb(104, 106, 122);
+    font-family: "dinpro", sans-serif;
+}
+.count {
+    padding-top: 4px;
+    padding-left: 5px;
+    font-size: 16px;
+}
+@media(max-width: 1400px) {
+    .apartment-description {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    color: rgb(104, 106, 122);
+    font-family: "dinpro", sans-serif;
+    margin-left: 0;
+        margin-top: 30px;
+}
+    .ratingDescription {
+    font-size: 18px;
+    display: flex;
+        flex-direction: column;
+}
+    .general-description {
+    margin-right: 0;
+    margin-top: 30px;
+}
+
 }
 
 

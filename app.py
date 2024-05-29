@@ -32,7 +32,7 @@ def get_complex(complex_id):
 
 def get_company(company_id):
     conn = get_db_connection()
-    company = conn.execute('SELECT * FROM company INNER JOIN company_review ON company.company_id = company_review.company_id WHERE company.company_id = ?',
+    company = conn.execute('SELECT * FROM company INNER JOIN company_review ON company.company_id = company_review.company_id INNER JOIN complex ON complex.company = company.company_id WHERE company.company_id = ?',
                            (company_id,)).fetchone()
     conn.close()
     if company is None:
@@ -94,6 +94,7 @@ def company_search():
 @app.route('/complex/<int:complex_id>')
 def complex(complex_id):
     complex = get_complex(complex_id)
+
     return render_template('post.html', complex=complex)
 
 
@@ -101,3 +102,4 @@ def complex(complex_id):
 def company(company_id):
     company = get_company(company_id)
     return render_template('company.html', company=company)
+
