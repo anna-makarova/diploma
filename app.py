@@ -22,8 +22,9 @@ def search_complex():
 
 def get_complex(complex_id):
     conn = get_db_connection()
-    complex = conn.execute('SELECT * FROM complex INNER JOIN complex_review ON complex.id = complex_review.complex_id INNER JOIN company ON company.company_id = complex.company WHERE complex.id = ?',
-                           (complex_id,)).fetchone()
+    complex = conn.execute(
+        'SELECT * FROM complex INNER JOIN complex_review ON complex.id = complex_review.complex_id INNER JOIN company ON company.company_id = complex.company WHERE complex.id = ?',
+        (complex_id,)).fetchone()
     conn.close()
     if complex is None:
         abort(404)
@@ -32,18 +33,30 @@ def get_complex(complex_id):
 
 def get_company(company_id):
     conn = get_db_connection()
-    company = conn.execute('SELECT * FROM company INNER JOIN company_review ON company.company_id = company_review.company_id INNER JOIN complex ON complex.company = company.company_id WHERE company.company_id = ?',
-                           (company_id,)).fetchone()
+    company = conn.execute(
+        'SELECT * FROM company INNER JOIN company_review ON company.company_id = company_review.company_id INNER JOIN complex ON complex.company = company.company_id WHERE company.company_id = ?',
+        (company_id,)).fetchone()
     conn.close()
     if company is None:
         abort(404)
     return company
 
 
+def get_complex_for_company(company_id):
+    conn = get_db_connection()
+    complex_list = conn.execute(
+        'SELECT * FROM complex INNER JOIN company ON complex.company = company.company_id WHERE company.company_id = ?',
+        (company_id,)).fetchall()
+    conn.close()
+    if complex_list is None:
+        abort(404)
+    return complex_list
+
+
 def getusers(search):
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM complex WHERE title LIKE ?", ("%"+search+"%",))
+    cursor.execute("SELECT * FROM complex WHERE title LIKE ?", ("%" + search + "%",))
     results = cursor.fetchall()
     conn.close()
     return results
@@ -52,7 +65,7 @@ def getusers(search):
 def getcompany(search):
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM company WHERE name LIKE ?", ("%"+search+"%",))
+    cursor.execute("SELECT * FROM company WHERE name LIKE ?", ("%" + search + "%",))
     results = cursor.fetchall()
     conn.close()
     return results
@@ -63,7 +76,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-
     return render_template('index.html')
 
 
@@ -101,5 +113,5 @@ def complex(complex_id):
 @app.route('/company/<int:company_id>')
 def company(company_id):
     company = get_company(company_id)
-    return render_template('company.html', company=company)
-
+    complex_list = get_complex_for_company(company_id)
+    return render_template('company.html', company=company, complex_list=complex_list)
