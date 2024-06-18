@@ -281,9 +281,17 @@ form{
     display: flex;
         flex-wrap: wrap-reverse;
 }
+    .companyMainWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 40px;
+    position: absolute;
+    bottom: 200px;
+    left: 40px;
 }
-
-
+}
 
 /*Карточки застройщиков*/
 .card {
@@ -336,7 +344,7 @@ a {
     justify-content: flex-start;
     margin-left: 40px;
     position: absolute;
-    bottom: 200px;
+    bottom: 400px;
     left: 40px;
 }
 .companyWrapper {
@@ -445,6 +453,7 @@ a {
     flex-direction: row;
     justify-content: flex-start;
     max-width: 650px;
+    height: fit-content;
 }
 
 @media(max-width: 1500px) {
@@ -470,6 +479,18 @@ a {
         display: none;
     }
 
+}
+@media(max-width: 900px) {
+    .companyMainWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 40px;
+    position: absolute;
+    bottom: 200px;
+    left: 40px;
+}
 }
 
 
